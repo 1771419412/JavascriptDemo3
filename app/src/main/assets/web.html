@@ -9,8 +9,21 @@
         }
         function javacalljswith(arg){
             document.getElementById("content").innerHTML=
-            ("<br/>"+arg)
+            ("<br/>"+arg);
         }
+        function call(){
+            var ph=document.getElementById("tel").value;
+            window.android.callTel(ph);
+        }
+
+        function message(){
+
+            var dx=document.getElementById("msg").value;
+             var nei=document.getElementById("txt").value;
+            window.android.goSendMessage(dx,nei);
+        }
+
+
 
 
 
@@ -24,9 +37,16 @@ HTML 内容显示<br/>
 <br/>
 <input type="button" value="点击调用Java代码并传递参数" onclick="window.android.startFunction('http://www.huya.com/')"/>
 <br/>
-<input type="button" value="点击拨打" onclick="window.android.callTel(10086)"/>
+<label>请输入要拨打的号码</label>
+<input type="number" id="tel"><br/>
+<input type="button" value="点击拨打" onclick="call()"/>
 <br/>
-<input type="button" value="点击发送短信" onclick="window.android.goSendMessage(10086)"/>
+<label>请输入要发送的联系人</label>
+<input type="number" id="msg"><br/>
+<label>请输入要发送的内容</label>
+<input type="text" id="txt"><br/>
+
+<input type="button" value="点击发送短信" onclick="message()"/>
 
 
 

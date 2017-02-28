@@ -84,12 +84,12 @@ public void callTel(final  String mobile){
 
     }
 @JavascriptInterface
-    public void goSendMessage(final String mobile)
+    public void goSendMessage(final String mobile,final String msg)
     {
         Log.v("law","号码是  "+mobile);
         Uri uri = Uri.parse("smsto:"+mobile);
         Intent intent = new Intent(Intent.ACTION_SENDTO,uri);
-
+        intent.putExtra("sms_body",msg);
         startActivity(intent);
 
     }
